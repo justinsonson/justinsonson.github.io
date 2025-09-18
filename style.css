@@ -7,6 +7,18 @@ html {
 }
 
 body {
-    color: var(--text);
-    background: var(var(--background));
+    color: var(--primary);
+    background: var(--background);
+}
+
+audio {
+    background: var(--secondary);
+}
+
+img {
+    padding: 4px;
+    border: 4px solid var(--accent);
+    border-radius: 20px;
+    background:  var(--primary);
+    
 }
