@@ -5,3 +5,8 @@ html {
 --secondary: #285172;
 --accent: #587ac5;
 }
+
+body {
+    color: var(--text)
+    background: var(var(--background))
+}
