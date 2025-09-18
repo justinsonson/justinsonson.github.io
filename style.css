@@ -7,6 +7,6 @@ html {
 }
 
 body {
-    color: var(--text)
-    background: var(var(--background))
+    color: var(--text);
+    background: var(var(--background));
 }
