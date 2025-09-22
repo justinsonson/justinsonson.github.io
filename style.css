@@ -9,6 +9,7 @@ html {
 body {
     color: var(--primary);
     background: var(--background);
+    font-family: "Zalando Sans Expanded";
 }
 
 audio {
