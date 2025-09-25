@@ -18,8 +18,14 @@ audio {
 
 img {
     padding: 4px;
-    border: 4px solid var(--accent);
+    border: 4px solid var(--primary);
     border-radius: 20px;
     background:  var(--primary);
     
+}
+* {
+    border:7px ridge teal 
+}
+* {
+    margin:5px
 }
