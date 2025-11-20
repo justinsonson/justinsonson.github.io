@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smeebus clicker</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #eee;
+            padding-top: 50px;
+        }
+        #score {
+            font-size: 40px;
+            color: rgb(0, 0, 0); 
+            margin-bottom: 20px;
+        }
+        #clickButton {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ccc;
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: background-color 0.1s;
+        }
+        #clickButton:active {
+            background-color: #bbb;
+        }
+        
+        .upgrade-section {
+            margin-top: 40px;
+            padding: 20px;
+        }
+        #upgradeButton {
+            padding: 10px 15px;
+            background-color: rgb(0, 0, 0); 
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        #upgradeButton:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h2>niche value</h2>
+    
+    <div id="score">0</div>
+    
+    <br>
+    
+    <button id="clickButton" onclick="clickMe()">become niche</button>
+    
+    <p> nicheness per click: <span id="clickPowerDisplay">1</span></p>
+
+    <div class="upgrade-section">
+        <h3>nicheness upgrade</h3>
+        <button id="upgradeButton" onclick="buyUpgrade()">
+            upgrade cost: <span id="upgradeCostDisplay">10</span>
+        </button>
+    </div>
+
+    <script>
+
+        let clicks = 0;
+        let clickPower = 1; 
+        let upgradeCost = 10; 
+
+        const scoreDisplay = document.getElementById('score');
+        const upgradeButton = document.getElementById('upgradeButton');
+        const upgradeCostDisplay = document.getElementById('upgradeCostDisplay');
+        const clickPowerDisplay = document.getElementById('clickPowerDisplay');
+
+        function updateUI() {
+            scoreDisplay.innerText = clicks;
+            clickPowerDisplay.innerText = clickPower;
+            upgradeCostDisplay.innerText = upgradeCost;
+
+            if (clicks >= upgradeCost) {
+                upgradeButton.disabled = false;
+            } else {
+                upgradeButton.disabled = true;
+            }
+        }
+
+        function clickMe() {
+            clicks = clicks + clickPower;
+
+            updateUI();
+        }
+
+        function buyUpgrade() {
+            if (clicks >= upgradeCost) {
+                clicks = clicks - upgradeCost;
+
+                clickPower = clickPower + 1;
+
+                upgradeCost = upgradeCost * 2;
+                updateUI();
+            }
+        }
+
+        updateUI();
+        
+    </script>
+</body>
+</html>
