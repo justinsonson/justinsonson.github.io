@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,13 @@
             background-color: #eee;
             padding-top: 50px;
         }
+
         #score {
             font-size: 40px;
-            color: rgb(0, 0, 0); 
+            color: rgb(0, 0, 0);
             margin-bottom: 20px;
         }
+
         #clickButton {
             padding: 15px 30px;
             font-size: 20px;
@@ -23,39 +26,42 @@
             cursor: pointer;
             transition: background-color 0.1s;
         }
+
         #clickButton:active {
             background-color: #bbb;
         }
-        
+
         .upgrade-section {
             margin-top: 40px;
             padding: 20px;
         }
+
         #upgradeButton {
             padding: 10px 15px;
-            background-color: rgb(0, 0, 0); 
+            background-color: rgb(0, 0, 0);
             color: white;
             border: none;
             cursor: pointer;
             transition: opacity 0.2s;
         }
+
         #upgradeButton:disabled {
             background-color: #aaa;
             cursor: not-allowed;
             opacity: 0.6;
         }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
+
 <body>
     <h2>smeebus value</h2>
-    
+
     <div id="score">0</div>
-    
+
     <br>
-    
+
     <button id="clickButton" onclick="clickMe()">smeebus</button>
-    
+
     <p> smeebus per click: <span id="clickPowerDisplay">1</span></p>
 
     <div class="upgrade-section">
@@ -65,23 +71,19 @@
         </button>
     </div>
 
-    <img
-    src="IMG_3650.JPG" alt="a rain photo"
-    width="200" height="300"
-
-    >
+    <img src="IMG_3650.JPG" alt="a rain photo" width="200" height="300">
 
     <script>
 
-    document.body.style.backgroundImage = "url('IMG_4111.JPG')";
-    document.body.style.backgroundSize = "cover";      // makes it fill the screen
-    document.body.style.backgroundRepeat = "no-repeat"; // prevents tiling
-    document.body.style.backgroundPosition = "center";  // centers the image
+        document.body.style.backgroundImage = "url('IMG_4111.JPG')";
+        document.body.style.backgroundSize = "cover";      // makes it fill the screen
+        document.body.style.backgroundRepeat = "no-repeat"; // prevents tiling
+        document.body.style.backgroundPosition = "center";  // centers the image
 
 
         let clicks = 0;
-        let clickPower = 1; 
-        let upgradeCost = 10; 
+        let clickPower = 1;
+        let upgradeCost = 10;
 
         const scoreDisplay = document.getElementById('score');
         const upgradeButton = document.getElementById('upgradeButton');
@@ -96,7 +98,7 @@
             if (clicks >= upgradeCost) {
                 upgradeButton.disabled = false;
             } else {
-                upgradeButton.disabled = true; 
+                upgradeButton.disabled = true;
             }
         }
 
@@ -118,7 +120,12 @@
         }
 
         updateUI();
-        
+
+        document.body.addEventListener("touchend", (event) => {
+            event.preventDefault();
+        });
+
     </script>
 </body>
+
 </html>
