@@ -14,7 +14,7 @@
 
         #score {
             font-size: 40px;
-            color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
             margin-bottom: 20px;
         }
 
@@ -71,11 +71,9 @@
         </button>
     </div>
 
-    <img src="IMG_3650.JPG" alt="a rain photo" width="200" height="300">
-
     <script>
 
-        document.body.style.backgroundImage = "url('IMG_4111.JPG')";
+        document.body.style.backgroundImage = "url('bp.jpg')";
         document.body.style.backgroundSize = "cover";      // makes it fill the screen
         document.body.style.backgroundRepeat = "no-repeat"; // prevents tiling
         document.body.style.backgroundPosition = "center";  // centers the image
@@ -120,10 +118,6 @@
         }
 
         updateUI();
-
-        document.body.addEventListener("touchend", (event) => {
-            event.preventDefault();
-        });
 
     </script>
 </body>
