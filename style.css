@@ -1,15 +1,15 @@
 html {
-    --text: #e6f6f3;
---background: #040b0a;
---primary: #a0ded6;
---secondary: #285172;
---accent: #587ac5;
+    --text: #000000;
+--background: #ffffff;
+--primary: #000000;
+--secondary: #686868;
+--accent: #555555;
 }
 
 body {
     color: var(--primary);
     background: var(--background);
-    font-family: "Zalando Sans Expanded";
+    
 }
 
 audio {
@@ -20,15 +20,12 @@ audio {
 }
 
 img {
-    padding: 4px;
     border: 4px solid var(--primary);
-    border-radius: 300px;
     background:  var(--accent);
     margin: 5px
 }
 h1 {
     width: 500px;
     height: 50px;
-    border:7px ridge teal;
     margin: 10px
 }
