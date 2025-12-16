@@ -36,18 +36,38 @@ h1 {
 img.no-radius {
   border-radius: 0;
 }
-/* Make the header take the top width of the screen */
-.page-header {
-  width: 100%;          /* Full width */
-  overflow: hidden;     /* Hide anything outside the header */
+/* 1. Remove default browser spacing */
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-/* Make the image fill the header width and stay at top corners */
+/* 2. Header container */
+.page-header {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 3. Header image */
 .page-header img {
-  width: 100%;          /* Full width of header */
-  height: auto;         /* Keep aspect ratio */
-  display: block;       /* Remove bottom gap */
-  object-fit: cover;    /* Optional: crop if needed to fill */
+  width: 100%;         /* Full width of viewport */
+  height: auto;        /* Maintain aspect ratio */
+  display: block;      /* Remove tiny gap below image */
+  object-fit: cover;   /* Ensures image fills width, cropping if necessary */
+}
+
+/* 4. Optional: make header fixed at top */
+.page-header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* 5. Optional: prevent content from hiding behind fixed header */
+body.with-fixed-header {
+  padding-top: 200px; /* adjust based on header height */
 }
 
 }
