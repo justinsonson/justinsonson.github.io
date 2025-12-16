@@ -4,8 +4,14 @@ html {
 --primary: #000000;
 --secondary: #686868;
 --accent: #555555;
+
+.hover-zoom {
+  transition: transform 0.3s ease;
 }
 
+.hover-zoom:hover {
+  transform: scale(1.1);
+}
 body {
     color: var(--primary);
     background: var(--background);
@@ -21,10 +27,19 @@ audio {
 
 img {
     background:  var(--accent);
-    margin: 5px
+    border-radius: 10px;
+    margin: 5px;
 }
 h1 {
     width: 500px;
     height: 50px;
     margin: 10px
+}
+img.no-radius {
+  border-radius: 0;
+}
+.fit-width {
+  max-width: 100%;
+  height: auto;
+}
 }
