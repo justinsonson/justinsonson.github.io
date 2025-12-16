@@ -15,7 +15,7 @@ html {
 body {
     color: var(--primary);
     background: var(--background);
-    
+    font-family: BHH-Bartle
 }
 
 audio {
@@ -27,7 +27,6 @@ audio {
 
 img {
     background:  var(--accent);
-    border-radius: 10px;
     margin: 5px;
 }
 h1 {
@@ -38,8 +37,18 @@ h1 {
 img.no-radius {
   border-radius: 0;
 }
-.fit-width {
-  max-width: 100%;
-  height: 100%;
+/* Make the header take the top width of the screen */
+.page-header {
+  width: 100%;          /* Full width */
+  overflow: hidden;     /* Hide anything outside the header */
 }
+
+/* Make the image fill the header width and stay at top corners */
+.page-header img {
+  width: 100%;          /* Full width of header */
+  height: auto;         /* Keep aspect ratio */
+  display: block;       /* Remove bottom gap */
+  object-fit: cover;    /* Optional: crop if needed to fill */
+}
+
 }
