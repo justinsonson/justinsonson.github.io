@@ -154,5 +154,38 @@ body.with-fixed-header {
   width: 100%;               /* span full width */
   box-sizing: border-box;    /* ensures padding doesn't break layout */
 }
+input[type=checkbox] {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    background: #eee;
+    padding: 10px;
+    display: block;
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #f9f9f9;
+    padding: 0 10px;
+  }
+
+  input[type=checkbox]:checked ~ .content {
+    max-height: 200px; /* adjust as needed */
+    padding: 10px;
+  }
+  .background-column {
+  position: fixed;        /* stays in place when scrolling */
+  top: 0;
+  left: 50%;              /* center horizontally */
+  transform: translateX(-50%);
+  width: 450px;           /* adjust column width */
+  height: 100%;           /* full page height */
+  background-color: rgb(212, 212, 212);
+  z-index: -1;            /* behind all other content */
+}
 
 }
