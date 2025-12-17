@@ -6,12 +6,25 @@ html {
 --accent: #555555;
 
 #bannerimage {
+  position: relative;
   width: 100%;
   background-image: url(https://justinsonson.github.io/frutiger.webp);
   height: 200px;
   background-position: center;
 }
-
+#bannerimage::after {
+  content: "";
+  position: absolute;
+  bottom: 0;                /* anchor to bottom of banner */
+  left: 0;
+  width: 100%;
+  height: 50%;             /* covers entire height, can adjust */
+  
+  /* Gradient: opaque at bottom, transparent at top */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0));
+  
+  pointer-events: none;     /* clicks pass through */
+}
 .overlay-image {
   display: block;
   background: transparent; 
@@ -24,8 +37,10 @@ html {
 
 .border-text {
   border: 10px ridge #b0b0b0; 
-  background-color:#ffffff;  /* thickness and color */
+  background-color:#ffffff;  
   padding: 10px 20px;   
+  text-align: center;      
+  width: fit-content;   
   border-radius: 10px;     /* space between text and border */
   display: inline-block;     /* so border fits the text size */
 }
@@ -133,6 +148,38 @@ html, body {
 /* 5. Optional: prevent content from hiding behind fixed header */
 body.with-fixed-header {
   padding-top: 200px; /* adjust based on header height */
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 80%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.popup-close {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 }
