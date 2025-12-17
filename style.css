@@ -6,17 +6,21 @@ html {
 --accent: #555555;
 
 .overlay-image {
-  background: transparent;
-  z-index: 1;
-  pointer-events: none;
-  position: relative;
-  animation: float 3s ease-in-out infinite;
+  display: block;
+  background: transparent; 
+  width: 700px;          /* Adjust size */
+  pointer-events: none;  /* So clicks still work */
+  position: relative;     /* Required for transform */
+  z-index: 2;             /* Above overlay */
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
 }
 
-@keyframes float {
-  0%   { transform: translateY(0); }
- 50%   { transform: translateY(-15px); } /* Moves up */
-100%   { transform: translateY(0); }
+.border-text {
+  border: 3px solid white; 
+  background-color:#9e9e9e;  /* thickness and color */
+  padding: 10px 20px;   
+  border-radius: 10px;     /* space between text and border */
+  display: inline-block;     /* so border fits the text size */
 }
 
 /* Reset */
@@ -30,7 +34,7 @@ body {
   position: fixed;
   inset: 0;
   background: #111;
-  color: white;
+  color: rgb(0, 0, 0);
 
   display: flex;
   flex-direction: column;

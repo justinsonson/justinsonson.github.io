@@ -1,10 +1,11 @@
 const titleScreen = document.getElementById("title-screen");
 
 titleScreen.addEventListener("click", () => {
-  titleScreen.classList.add("fade-out");
+  titleScreen.style.transition = "opacity 0.8s ease";
+  titleScreen.style.opacity = 0;
 
-  // Remove after fade completes
   setTimeout(() => {
     titleScreen.style.display = "none";
   }, 800);
 });
+
