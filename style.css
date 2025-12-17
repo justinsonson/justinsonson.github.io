@@ -8,7 +8,7 @@ html {
 .overlay-image {
   display: block;
   background: transparent; 
-  width: 700px;          /* Adjust size */
+  width: 1000px;          /* Adjust size */
   pointer-events: none;  /* So clicks still work */
   position: relative;     /* Required for transform */
   z-index: 2;             /* Above overlay */
