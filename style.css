@@ -5,6 +5,13 @@ html {
 --secondary: #686868;
 --accent: #555555;
 
+#bannerimage {
+  width: 100%;
+  background-image: url(https://justinsonson.github.io/frutiger.webp);
+  height: 200px;
+  background-position: center;
+}
+
 .overlay-image {
   display: block;
   background: transparent; 
