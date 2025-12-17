@@ -107,14 +107,12 @@ audio {
 img {
     background:  var(--accent);
     margin: 5px;
+    border-radius: 15px;
 }
 h1 {
     width: 500px;
     height: 50px;
     margin: 10px;
-}
-img.no-radius {
-  border-radius: 0;
 }
 /* 1. Remove default browser spacing */
 html, body {
@@ -149,37 +147,12 @@ html, body {
 body.with-fixed-header {
   padding-top: 200px; /* adjust based on header height */
 }
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: none; /* hidden by default */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup-box {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 400px;
-  width: 80%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.popup-close {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #222;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.full-width-box {
+  background-color: #3498db; /* any color you want */
+  color: white;              /* text color */
+  padding: 20px;             /* space inside the box */
+  width: 100%;               /* span full width */
+  box-sizing: border-box;    /* ensures padding doesn't break layout */
 }
 
 }
