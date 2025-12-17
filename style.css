@@ -5,6 +5,55 @@ html {
 --secondary: #686868;
 --accent: #555555;
 
+.overlay-image {
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+ 50%   { transform: translateY(-15px); } /* Moves up */
+100%   { transform: translateY(0); }
+}
+
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Title Screen Overlay */
+#title-screen {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  transition: opacity 0.8s ease;
+  z-index: 1000;
+}
+
+/* Fade-out state */
+#title-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Main Content */
+#main-content {
+  padding: 40px;
+}
+
+
 .hover-zoom {
   transition: transform 0.3s ease;
 }
@@ -16,6 +65,11 @@ body {
     color: var(--primary);
     background: var(--background);
 }
+
+#title-screen {
+  background: url("windows.jpg") center / cover no-repeat;
+}
+
 
 audio {
     padding: 4px;
@@ -62,7 +116,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 900;
 }
 
 /* 5. Optional: prevent content from hiding behind fixed header */
